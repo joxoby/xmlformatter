@@ -1,0 +1,7 @@
+- id: xmlformat
+  name: xmlformat
+  description: Formatting for XML files
+  entry: "xmlformat --overwrite"
+  args: []
+  language: python
+  types: [file]
