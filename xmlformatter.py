@@ -168,6 +168,8 @@ class Formatter:
             result = ""
             for tk in iter(self):
                 result += str(tk)
+            # Append a newline character at the end of the document
+            result += '\n'
             return result
 
         def append(self, tk):
