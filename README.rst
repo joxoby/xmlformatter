@@ -190,3 +190,13 @@ Remove XmlFormatter before installing xmlformatter:
     $ pip uninstall XmlFormatter
 
 After reinstallation replace the string "formatter.formatter" by "formatter", "preserving" by "preserve" and "indentChar" by "indent_char" inside your scripts carefully. To reach compatibility with XmlFormatter call xmlformat with --disable-inlineformatting or use inline=False in your scripts.
+
+===============
+pre-commit hook
+===============
+To add this tool as a pre-commit hook, you can add these lines to your `pre-commit-config.yaml` file:
+::
+  -   repo: https://github.com/joxoby/xmlformatter.git
+      rev: v0.2.0
+      hooks:
+      -   id: xmlformat
