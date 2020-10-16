@@ -629,11 +629,7 @@ class Formatter:
 
         def __unicode__(self):
             str = ""
-            # Don't close empty nodes on compression mode:
-            if (
-                not self.formatter.compress
-                or self.list[self.pos - 1].name != "StartElement"
-            ):
+            if self.list[self.pos - 1].name != "StartElement":
                 if self.preserve in [0] and self.indent:
                     str += self.indent_insert()
                 str += "</%s>" % self.arg[0]
@@ -709,7 +705,7 @@ class Formatter:
             str += "<%s" % self.arg[0]
             for attr in sorted(self.arg[1].keys()):
                 str += self.attribute(attr, self.arg[1][attr])
-            if self.list[self.pos + 1].end and self.formatter.compress:
+            if self.list[self.pos + 1].end:
                 str += "/>"
             else:
                 str += ">"

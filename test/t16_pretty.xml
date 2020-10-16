@@ -23,4 +23,4 @@
   <!NOTATION blau SYSTEM "file:///root/home.txt">
   <!NOTATION turkies PUBLIC "http://banane.de/color/turkish">
 ]>
-<root></root>
+<root/>
